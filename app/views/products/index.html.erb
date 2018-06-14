@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h1>Products</h1>
+      <div class="text-right">
+        <%= link_to "New Product", new_product_path, class: "btn btn-primary" %>
+      </div>
+      <div class="table">
+        <table class="table">
+          <thead>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Categories</th>
+          </thead>
+        <tbody>
+          <% @products.each do |info| %>
+          <tr>
+            <td><%= info.name %></td>
+            <td><%= info.price %></td>
+            <td>CATEGORIAS</td>
+            <div class="actions">
+             <td><%= link_to "Delete", info, method: :delete %> <%= link_to "Edit", edit_product_path(info)  %></td>
+            </div>
+          </tr>
+          <% end %>
+        </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
